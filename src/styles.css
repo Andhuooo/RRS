@@ -1,0 +1,169 @@
+/* styles.css */
+
+body {
+  background-color:#ebebeb;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+  }
+
+.logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-right: 16px;
+  }
+  
+  header {
+    background-color: black;
+    color: #ffffff;
+    padding: 20px;
+    text-align: left;
+  }
+  .header-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  
+  nav {
+    background-color: #f1f1f1;
+    padding: 10px;
+    float: right;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav li {
+    margin-right: 10px;
+  }
+  
+  nav li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  nav li a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  section {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .section-description {
+    margin-bottom: 20px;
+  }
+  
+  .section-description p {
+    font-size: 18px;
+  }
+  
+  .section-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .section-card {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  .section-card img {
+    max-width: 100%;
+  }
+  
+  .section-card h3 {
+    margin-top: 0;
+  }
+  
+  .section-card p {
+    margin-bottom: 10px;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  /* banner styles */
+.banner {
+  background-image: url('./logo1.jpg'); /* Adjust the path to your banner image */
+  background-size: cover;
+  background-position: center;
+  height: 400px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+}
+
+.banner-content {
+  text-align: center;
+  color: #fff;
+}
+
+.banner-content h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin: 0;
+}
+/* styles.css */
+.carousel-banner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.carousel-banner-item {
+  width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.carousel-banner-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-banner-caption {
+  padding: 20px;
+}
+
+.carousel-banner-caption h3 {
+  margin: 0;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.carousel-banner-caption p {
+  margin: 0;
+}

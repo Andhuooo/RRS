@@ -1,0 +1,31 @@
+/* SearchBar.css */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #b31111;
+    border-radius: 4px;
+    margin-right: 8px;
+  }
+  
+  .search-bar button {
+    padding: 8px 16px;
+    background-color: #c513a7;
+    color: rgb(186, 7, 7);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0f20be;
+  }
+  
+  .search-bar button:focus {
+    outline: none;
+  }
+  
