@@ -1,65 +1,67 @@
 // components/Login.js
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Login.css';
-import axios from 'axios';
-
-
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Login.css";
+import axios from "axios";
+import { login } from "../libs/api";
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+	const [username, setUsername] = useState("");
+	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    login(username,password);
-    
-    // Check if the entered username and password match the default values
-    
-  };
-  function login(username,password) {
-    axios.post('http://localhost:3000/api/login', {
-      email: username,
-      password: password
-    })
-    .then(function (response) {
-      console.log(response);
-      if(response.status === 200){
-        navigate('/dashboard');
+	useEffect(() => {
+		const user = localStorage.getItem("user");
+		if (user) {
+			navigate("/dashboard");
+		}
+	}, []);
 
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-  return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </label>
+	const handleLogin = async (e) => {
+		e.preventDefault();
+		const response = await login({ email: username, password });
+		if (response && response.status === 200) {
+			localStorage.setItem("user", response.data.email);
+			navigate("/dashboard");
+		} else {
+			alert("Login failed");
+		}
 
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
+		// Check if the entered username and password match the default values
+	};
+	return (
+		<div className="login-container">
+			<h2>Login</h2>
+			<form onSubmit={handleLogin}>
+				<div className="field-container">
+					<label>
+						Username:
+						<input
+							type="text"
+							value={username}
+							onChange={(e) => setUsername(e.target.value)}
+						/>
+					</label>
+				</div>
+				<div className="field-container">
+					<label>
+						Password:
+						<input
+							type="password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</label>
+				</div>
+				<button type="submit">Login</button>
+			</form>
+			<div className="signup-redirect-container">
+				<h3>Do not have an account yet ?</h3>
 
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
+				<a href="/signup">Signup</a>
+			</div>
+		</div>
+	);
 }
 
 export default Login;

@@ -1,37 +1,44 @@
-import React from 'react';
-import './Dashboard.css';
-import SearchBar from './SearchBar';
+import React, { useEffect } from "react";
+import "./Dashboard.css";
+import SearchBar from "./SearchBar";
+import { redirect } from "react-router-dom";
 
 function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
+	const user = localStorage.getItem("user");
 
-      <SearchBar />
+	useEffect(() => {
+		console.log(user);
+		if (!user) {
+			window.location.href = "/login";
+		}
+	}, []);
+	return (
+		<div>
+			<h2>Dashboard</h2>
 
-      {/* Profile Section */}
-      <div className="profile-section">
-        {/* Content for the profile section */}
-      </div>
+			<SearchBar />
 
-      {/* Cart Section */}
-      <div className="cart-section">
-        {/* Content for the cart section */}
-      </div>
+			{/* Profile Section */}
+			<div className="profile-section">
+				{/* Content for the profile section */}
+			</div>
 
-      {/* Recommended Restaurants */}
-      <h3>Recommended Restaurants</h3>
-      {/* Recommended restaurants content */}
+			{/* Cart Section */}
+			<div className="cart-section">{/* Content for the cart section */}</div>
 
-      {/* Diet Plan */}
-      <h3>Diet Plan</h3>
-      {/* Diet plan content */}
+			{/* Recommended Restaurants */}
+			<h3>Recommended Restaurants</h3>
+			{/* Recommended restaurants content */}
 
-      {/* Recent Activity */}
-      <h3>Recent Activity</h3>
-      {/* Recent activity content */}
-    </div>
-  );
+			{/* Diet Plan */}
+			<h3>Diet Plan</h3>
+			{/* Diet plan content */}
+
+			{/* Recent Activity */}
+			<h3>Recent Activity</h3>
+			{/* Recent activity content */}
+		</div>
+	);
 }
 
 export default Dashboard;
