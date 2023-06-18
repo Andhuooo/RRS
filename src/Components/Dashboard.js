@@ -1,17 +1,33 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import SearchBar from "./SearchBar";
 import { redirect } from "react-router-dom";
+import { getMealPlan } from "../libs/api";
 
 function Dashboard() {
 	const user = localStorage.getItem("user");
+	const [mealPlan, setMealPlan] = useState({});
 
 	useEffect(() => {
 		console.log(user);
 		if (!user) {
 			window.location.href = "/login";
 		}
+		if (user) {
+			handleUpdateMealPlan();
+		}
 	}, []);
+
+	const handleUpdateMealPlan = async () => {
+		const response = await getMealPlan({ email: user });
+		console.log(
+			"🚀 ~ file: Dashboard.js:23 ~ handleUpdateMealPlan ~ response:",
+			response
+		);
+		if (response.status === 200) {
+			setMealPlan(response.data.mealPlan);
+		}
+	};
 	return (
 		<div>
 			<h2>Dashboard</h2>
@@ -32,6 +48,25 @@ function Dashboard() {
 
 			{/* Diet Plan */}
 			<h3>Diet Plan</h3>
+			<div className="diet-plan-container">
+				{mealPlan.meals &&
+					mealPlan.meals.map((meal) => {
+						return (
+							<div className="diet-plan-item">
+								<h4>{meal.name}</h4>
+								<p>{meal.description}</p>
+								{meal.recipes.map((recipe) => {
+									return (
+										<div className="recipe-item">
+											<h5>{recipe.name}</h5>
+											<p>{recipe.instructions}</p>
+										</div>
+									);
+								})}
+							</div>
+						);
+					})}
+			</div>
 			{/* Diet plan content */}
 
 			{/* Recent Activity */}

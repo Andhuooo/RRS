@@ -3,6 +3,11 @@
 // Import required modules
 const express = require("express");
 const mongoose = require("mongoose");
+const populator = require("./seeds");
+const { User, MealPlan } = require("./models");
+
+// initialize the populateMealPlans script
+populator;
 
 // Create an instance of Express app
 const app = express();
@@ -31,26 +36,6 @@ mongoose
 	.catch((error) => {
 		console.error("Error connecting to MongoDB:", error);
 	});
-
-// Create a user schema
-const userSchema = new mongoose.Schema({
-	username: String,
-	password: String,
-	email: String,
-	dietaryPreferences: String,
-	age: Number,
-	location: String,
-	gender: String,
-});
-
-const mealPlanScheme = new mongoose.Schema({
-	mealPlanId: String,
-	meals: Array,
-});
-
-// Create a User model with collection name "users"
-const User = mongoose.model("User", userSchema, "users");
-const MealPlan = mongoose.model("MealPlan", mealPlanScheme, "mealPlans");
 
 // Signup API endpoint
 app.post("/api/signup", async (req, res) => {
@@ -99,8 +84,6 @@ app.post("/api/signup", async (req, res) => {
 app.post("/api/login", async (req, res) => {
 	// Retrieve login data from the request body
 	const { email, password } = req.body;
-	console.log("🚀 ~ file: Server.js:100 ~ app.post ~ password:", password);
-	console.log("🚀 ~ file: Server.js:100 ~ app.post ~ email:", email);
 
 	// Check if the user exists in the database and the provided password is correct
 	const user = await User.findOne({ email: email });
@@ -122,6 +105,23 @@ app.post("/api/login", async (req, res) => {
 	}
 
 	console.log(user);
+});
+
+app.get("/api/meal-plans", async (req, res) => {
+	const email = req.query.user;
+	const user = await User.findOne({ email: email });
+
+	if (!user) {
+		res.status(404).json({ message: "user not found", success: false });
+	}
+
+	const mealPlan = await MealPlan.findOne({ mealPlanId: "1" });
+	if (!mealPlan) {
+		res.status(404).json({ message: "meal plan not found", success: false });
+		return;
+	}
+
+	res.status(200).json({ success: true, mealPlan: mealPlan });
 });
 
 // Start the server

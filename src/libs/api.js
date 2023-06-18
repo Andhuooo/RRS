@@ -23,4 +23,15 @@ const login = async (data) => {
 	}
 };
 
-export { signup, login };
+const getMealPlan = async (data) => {
+	try {
+		const response = await axios.get(`${BASE_URL}/meal-plans`, {
+			params: { user: data.email },
+		});
+		return response;
+	} catch (err) {
+		console.log(err);
+	}
+};
+
+export { signup, login, getMealPlan };

@@ -1,39 +1,70 @@
 .search-bar {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-bar input[type="text"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .search-bar button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .profile-section {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .cart-section {
-    padding: 20px;
-    background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Additional styles for the recommended restaurants, diet plan, and recent activity */
-  
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.search-bar button {
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.profile-section {
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.cart-section {
+	padding: 20px;
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+/* Additional styles for the recommended restaurants, diet plan, and recent activity */
+.diet-plan-container {
+	margin: auto;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.diet-plan-container h3 {
+	margin-bottom: 20px;
+}
+
+.diet-plan-container ul {
+	list-style-type: none;
+}
+
+.diet-plan-container ul li {
+	margin-bottom: 10px;
+}
+
+.diet-plan-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
