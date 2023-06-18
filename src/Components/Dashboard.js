@@ -26,50 +26,55 @@ function Dashboard() {
 		}
 	};
 	return (
-		<div>
-			<h2>Dashboard</h2>
-
-			<SearchBar />
-
-			{/* Profile Section */}
-			<div className="profile-section">
-				{/* Content for the profile section */}
+		<React.Fragment>
+			<div>
+				<p style={{ height: "30px" }}></p>
 			</div>
+			<div>
+				<h2>Dashboard</h2>
 
-			{/* Cart Section */}
-			<div className="cart-section">{/* Content for the cart section */}</div>
+				<SearchBar />
 
-			{/* Recommended Restaurants */}
-			<h3>Recommended Restaurants</h3>
-			{/* Recommended restaurants content */}
+				{/* Profile Section */}
+				<div className="profile-section">
+					{/* Content for the profile section */}
+				</div>
 
-			{/* Diet Plan */}
-			<h3>Diet Plan</h3>
-			<div className="diet-plan-container">
-				{mealPlan.meals &&
-					mealPlan.meals.map((meal) => {
-						return (
-							<div className="diet-plan-item">
-								<h4>{meal.name}</h4>
-								<p>{meal.description}</p>
-								{meal.recipes.map((recipe) => {
-									return (
-										<div className="recipe-item">
-											<h5>{recipe.name}</h5>
-											<p>{recipe.instructions}</p>
-										</div>
-									);
-								})}
-							</div>
-						);
-					})}
+				{/* Cart Section */}
+				<div className="cart-section">{/* Content for the cart section */}</div>
+
+				{/* Recommended Restaurants */}
+				<h3>Recommended Restaurants</h3>
+				{/* Recommended restaurants content */}
+
+				{/* Diet Plan */}
+				<h3>Diet Plan</h3>
+				<div className="diet-plan-container">
+					{mealPlan.meals &&
+						mealPlan.meals.map((meal) => {
+							return (
+								<div className="diet-plan-item">
+									<h4>{meal.name}</h4>
+									<p>{meal.description}</p>
+									{meal.recipes.map((recipe) => {
+										return (
+											<div className="recipe-item">
+												<h5>{recipe.name}</h5>
+												<p>{recipe.instructions}</p>
+											</div>
+										);
+									})}
+								</div>
+							);
+						})}
+				</div>
+				{/* Diet plan content */}
+
+				{/* Recent Activity */}
+				<h3>Recent Activity</h3>
+				{/* Recent activity content */}
 			</div>
-			{/* Diet plan content */}
-
-			{/* Recent Activity */}
-			<h3>Recent Activity</h3>
-			{/* Recent activity content */}
-		</div>
+		</React.Fragment>
 	);
 }
 
