@@ -5,6 +5,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const populator = require("./seeds");
 const { User, MealPlan } = require("./models");
+const { DB_URL } = require("./config");
 
 // initialize the populateMealPlans script
 populator;
@@ -23,13 +24,10 @@ app.use(express.json());
 
 // Connect to MongoDB database
 mongoose
-	.connect(
-		"mongodb+srv://ajay:pass1234@cluster0.tc816.mongodb.net/meal-planner",
-		{
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-		}
-	)
+	.connect(DB_URL, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+	})
 	.then(() => {
 		console.log("Connected to MongoDB");
 	})
@@ -115,7 +113,14 @@ app.get("/api/meal-plans", async (req, res) => {
 		res.status(404).json({ message: "user not found", success: false });
 	}
 
-	const mealPlan = await MealPlan.findOne({ mealPlanId: "1" });
+	let mealPlan = null;
+	if (user.dietaryPreferences === "vegetarian" || user.age < 30) {
+		mealPlan = await MealPlan.findOne({ mealPlanId: "1" });
+	} else if (user.dietaryPreferences === "non_vegetarian" || user.age > 30) {
+		mealPlan = await MealPlan.findOne({ mealPlanId: "1" });
+	} else {
+		mealPlan = await MealPlan.findOne({ mealPlanId: "3" });
+	}
 	if (!mealPlan) {
 		res.status(404).json({ message: "meal plan not found", success: false });
 		return;
