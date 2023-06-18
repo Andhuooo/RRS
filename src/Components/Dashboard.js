@@ -20,11 +20,8 @@ function Dashboard() {
 
 	const handleUpdateMealPlan = async () => {
 		const response = await getMealPlan({ email: user });
-		console.log(
-			"🚀 ~ file: Dashboard.js:23 ~ handleUpdateMealPlan ~ response:",
-			response
-		);
-		if (response.status === 200) {
+
+		if (response && response.status === 200) {
 			setMealPlan(response.data.mealPlan);
 		}
 	};
