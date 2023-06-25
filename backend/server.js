@@ -144,13 +144,13 @@ app.get("/api/meal-plans", async (req, res) => {
 	}
 
 	let mealPlan = null;
-	if (user.dietaryPreferences === "vegetarian" && user.age > 30) {
+	if (user.dietaryPreferences === "vegeterian" && user.age > 30) {
 	mealPlan = await MealPlan.findOne({ mealPlanId: "1" });
-} else if (user.dietaryPreferences === "non_vegetarian" && user.age > 30) {
+} else if (user.dietaryPreferences === "non_vegeterian" && user.age > 30) {
 	mealPlan = await MealPlan.findOne({ mealPlanId: "2" });
 } else if (user.dietaryPreferences === "sugarfree" && user.age > 30){
 	mealPlan = await MealPlan.findOne({ mealPlanId: "3" });
-}else if (user.dietaryPreferences === "vegan" && user.age > 30){
+}else if (user.dietaryPreferences === "vegeterian" && user.age > 30){
 	mealPlan = await MealPlan.findOne({ mealPlanId: "4" });
 }
 
