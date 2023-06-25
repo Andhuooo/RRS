@@ -264,22 +264,22 @@ const restaurantPlans = [
 				menu:[
 					{
 						name: "Appetizers",
-                        items: "\n1. spinach and Artichoke Dip: Creamy spinach and artichoke dip served with crispy tortilla chips.\n2. Bruschetta: Toasted baguette slices topped with fresh tomatoes, basil, and garlic.\n3. Vegetable Spring Rolls: Crispy spring rolls filled with mixed vegetables and served with sweet chili sauce.\n",
-                        name: "Soups and Salads",
+                        items: "\n1. spinach and Artichoke Dip: Creamy spinach and artichoke dip served with crispy tortilla chips.\n2. Bruschetta: Toasted baguette slices topped with fresh tomatoes, basil, and garlic.\n3. Vegetable Spring Rolls: Crispy spring rolls filled with mixed vegetables and served with sweet chili sauce.\n"},
+                       { name: "Soups and Salads",
 
-                        items: "\n1Roasted Butternut Squash Soup: Velvety soup made with roasted butternut squash, spices, and a touch of cream.\n2Greek Salad: Fresh mixed greens, tomatoes, cucumbers, red onions, Kalamata olives, and feta cheese tossed in a lemon-herb vinaigrette.\n3Quinoa and Kale Salad: Nutritious salad with quinoa, kale, cherry tomatoes, roasted almonds, and a citrus vinaigrette.\n",
-                        name: "Main Courses",
+                        items: "\n1Roasted Butternut Squash Soup: Velvety soup made with roasted butternut squash, spices, and a touch of cream.\n2Greek Salad: Fresh mixed greens, tomatoes, cucumbers, red onions, Kalamata olives, and feta cheese tossed in a lemon-herb vinaigrette.\n3Quinoa and Kale Salad: Nutritious salad with quinoa, kale, cherry tomatoes, roasted almonds, and a citrus vinaigrette.\n"},
+                       {name: "Main Courses",
 
-                        items: "\n1Eggplant Parmesan: Breaded and baked eggplant slices topped with marinara sauce and melted mozzarella cheese, served with spaghetti.\n2Chickpea Curry: Flavorful curry made with chickpeas, tomatoes, onions, and a blend of aromatic spices, served with steamed basmati rice.\n3Portobello Mushroom Burger: Grilled portobello mushroom cap marinated in balsamic glaze, topped with lettuce, tomato, red onion, and served on a whole wheat bun with a side of sweet potato fries.\n",
-                        name: "Pasta and Noodles",
+                        items: "\n1Eggplant Parmesan: Breaded and baked eggplant slices topped with marinara sauce and melted mozzarella cheese, served with spaghetti.\n2Chickpea Curry: Flavorful curry made with chickpeas, tomatoes, onions, and a blend of aromatic spices, served with steamed basmati rice.\n3Portobello Mushroom Burger: Grilled portobello mushroom cap marinated in balsamic glaze, topped with lettuce, tomato, red onion, and served on a whole wheat bun with a side of sweet potato fries.\n"},
+                       { name: "Pasta and Noodles",
 
-                        items: "\n1Pesto Pasta: Linguine pasta tossed in a homemade basil pesto sauce with cherry tomatoes and Parmesan cheese.\n2Vegetable Pad Thai: Stir-fried rice noodles with tofu, bean sprouts, bell peppers, carrots, and peanuts in a tangy tamarind sauce.\n",
-                        name: "Desserts:",
+                        items: "\n1Pesto Pasta: Linguine pasta tossed in a homemade basil pesto sauce with cherry tomatoes and Parmesan cheese.\n2Vegetable Pad Thai: Stir-fried rice noodles with tofu, bean sprouts, bell peppers, carrots, and peanuts in a tangy tamarind sauce.\n"},
+                       {name: "Desserts:",
 
-                        items: "\n1Chocolate Avocado Mousse: Decadent and creamy chocolate mousse made with avocado, cocoa powder, and a hint of sweetness.\n2Vegan Apple Crisp: Baked apple slices topped with a crunchy oat and nut crumble, served with vegan vanilla ice cream.\n3Coconut Mango Panna Cotta: Smooth and creamy coconut milk panna cotta infused with fresh mango flavors.\n"
+                        items: "\n1Chocolate Avocado Mousse: Decadent and creamy chocolate mousse made with avocado, cocoa powder, and a hint of sweetness.\n2Vegan Apple Crisp: Baked apple slices topped with a crunchy oat and nut crumble, served with vegan vanilla ice cream.\n3Coconut Mango Panna Cotta: Smooth and creamy coconut milk panna cotta infused with fresh mango flavors.\n"}
 
 
-			        },
+			        
 		       ],
 	       },
 		],
