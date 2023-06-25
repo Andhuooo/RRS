@@ -170,7 +170,7 @@ app.get("/api/restaurant-plans", async (req, res) => {
 	}
 
 	let restaurantPlan = null;
-	if (user.dietaryPreferences === "vegetarian" && user.age > 30) {
+	if ((user.dietaryPreferences === "vegetarian"  || user.dietaryPreferences === "sugarfree" )&& user.age > 30) {
 	restaurantPlan = await RestaurantPlan.findOne({ restaurantPlanId: "1" });
 
 }

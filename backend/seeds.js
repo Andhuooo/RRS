@@ -259,9 +259,9 @@ const restaurantPlans = [
 		restaurants: [
 			{
 				restaurantId: "1",
-				Name: "Vegetarian Delights",
-                Location: "kottayam",
-				Menu:[
+				name: "Vegetarian Delights",
+                location: "kottayam",
+				menu:[
 					{
 						name: "Appetizers",
                         items: "\n1. spinach and Artichoke Dip: Creamy spinach and artichoke dip served with crispy tortilla chips.\n2. Bruschetta: Toasted baguette slices topped with fresh tomatoes, basil, and garlic.\n3. Vegetable Spring Rolls: Crispy spring rolls filled with mixed vegetables and served with sweet chili sauce.\n",
