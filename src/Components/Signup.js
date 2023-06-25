@@ -58,6 +58,7 @@ function Signup() {
 				console.error("Error creating user:", error);
 			});
 	};
+	
 
 	return (
 		<div className="signup-container">
@@ -106,7 +107,8 @@ function Signup() {
 						<option value="">Dietary Preference</option>
 						<option value="vegeterian">Vegeterian</option>
 						<option value="non_vegetarian">Non Vegetarian</option>
-						<option value="any">Any</option>
+						<option value="sugarfree">Sugarfree</option>
+						<option value="vegan">Vegan</option>
 					</select>
 				</div>
 				<div className="field-container">

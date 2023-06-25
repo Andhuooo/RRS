@@ -9,17 +9,15 @@ body {
   }
 
 .logo {
-    width: 50px;
+    width: 80px;
     height: auto;
-    margin-bottom: 20px;
-    margin-right: 16px;
   }
   
   header {
     background-color: black;
     color: #ffffff;
-    padding: 20px;
     text-align: left;
+    padding: 0 0 20px 20px;
   }
   .header-section {
     display: flex;
@@ -32,7 +30,6 @@ body {
   
   
   nav {
-    background-color: #f1f1f1;
     padding: 10px;
     float: right;
   }
@@ -110,14 +107,14 @@ body {
   }
   /* banner styles */
 .banner {
-  background-image: url('./logo1.jpg'); /* Adjust the path to your banner image */
+  background-image: url('./Homebanner.jpg'); /* Adjust the path to your banner image */
   background-size: cover;
   background-position: center;
   height: 400px; /* Adjust the height as needed */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 .banner-content {
@@ -151,7 +148,8 @@ body {
 
 .carousel-banner-item img {
   width: 100%;
-  height: auto;
+  height: 356px;
+  object-fit: cover;
 }
 
 .carousel-banner-caption {
@@ -166,4 +164,7 @@ body {
 
 .carousel-banner-caption p {
   margin: 0;
+}
+nav li a {
+  color: #fff;
 }

@@ -5,6 +5,9 @@ import userprofile from "../userprofile.png";
 
 function Userprofile() {
   const [user] = useState(localStorage.getItem("user"));
+  const [age] = useState(localStorage.getItem("age"));
+  
+  
 
   return (
     <div className="user-profile-container">
@@ -18,6 +21,8 @@ function Userprofile() {
         <div className="user-profile-details">
           <h3>{user}</h3>
           <p>Email: {user}</p>
+          <p>Age: {age}</p>
+          
           {/* Add additional user details here */}
         </div>
       </div>

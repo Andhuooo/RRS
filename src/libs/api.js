@@ -22,6 +22,18 @@ const login = async (data) => {
 		console.log(err);
 	}
 };
+const userprofile = async (data) => {
+	try {
+	  const response = await axios.get(`${BASE_URL}/user-profile`, {
+		//params: { email: data.email },
+		...data,
+	  });
+	  return response;
+	} catch (err) {
+	  console.log(err);
+	}
+  };
+  
 
 const getMealPlan = async (data) => {
 	try {
@@ -33,5 +45,15 @@ const getMealPlan = async (data) => {
 		console.log(err);
 	}
 };
+const getRestaurantPlan = async (data) => {
+	try {
+		const response = await axios.get(`${BASE_URL}/restaurant-plans`, {
+			params: { user: data.email },
+		});
+		return response;
+	} catch (err) {
+		console.log(err);
+	}
+};
 
-export { signup, login, getMealPlan };
+export { signup, login, getMealPlan, getRestaurantPlan,userprofile };

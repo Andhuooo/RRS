@@ -11,6 +11,7 @@ import Login from "./Components/Login";
 import Signup from "./Components/Signup";
 import Dashboard from "./Components/Dashboard";
 import SearchBar from "./Components/SearchBar";
+import Userprofile from "./Components/Userprofile";
 import "./styles.css";
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
 					<Route path="/signup" element={<Signup />} />
 					<Route path="/dashboard" element={<Dashboard />} />
 					<Route path="/searchbar" element={<SearchBar />} />
+					<Route path="/userprofile" element={<Userprofile />} />
+
 				</Routes>
 			</div>
 		</Router>
@@ -37,7 +40,8 @@ function App() {
 
 function Appbar() {
 	const location = useLocation();
-	const isDashboardRoute = location.pathname === "/dashboard";
+	//const isDashboardRoute = location.pathname === "/dashboard";
+    const isDashboardRoute = true;
 
 	const handleLogout = () => {
 		localStorage.removeItem("user");
@@ -59,6 +63,9 @@ function Appbar() {
 					<Link to="/login" onClick={() => handleLogout()}>
 						Log Out
 					</Link>
+				</li>
+				<li>
+					<Link to="/userprofile">User Profile</Link>
 				</li>
 			</>
 		);

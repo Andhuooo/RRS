@@ -1,8 +1,11 @@
 // components/Home.js
 import React from 'react';
 import logo from '../logo.png';
-import logo1 from '../logo1.jpg';
 import './Home.css';
+import Homebanner from '../Homebanner.jpg';
+import DietImg from '../dietImg.jpg';
+import RestuarantImg from '../restuarantImg.jpg'
+
 
 
 function Home() {
@@ -17,17 +20,12 @@ function Home() {
       </header>
 
       <section className="banner">
-        <div className="banner-content">
-          <h2>Welcome to Wellness Eats</h2>
-          <p>Discover healthy dining options tailored to your dietary needs.</p>
-          {/* Additional content related to the banner section */}
-        </div>
       </section>
 
       <section className="carousel-banner">
         {/* First carousel banner */}
         <div className="carousel-banner-item">
-          <img src={logo1} alt="Carousel Image 1" />
+          <img src={RestuarantImg} alt="Carousel Image 1" />
           <div className="carousel-banner-caption">
             <h3>Discover New Restaurants</h3>
             <p>Explore a variety of healthy eateries near you.</p>
@@ -36,7 +34,7 @@ function Home() {
 
         {/* Second carousel banner */}
         <div className="carousel-banner-item">
-          <img src={logo1} alt="Carousel Image 2" />
+          <img src={DietImg} alt="Carousel Image 2" />
           <div className="carousel-banner-caption">
             <h3>Customize Your Diet Plan</h3>
             <p>Create a personalized diet plan based on your preferences.</p>
