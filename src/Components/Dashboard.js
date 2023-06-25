@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import SearchBar from "./SearchBar";
-import { redirect } from "react-router-dom";
 import { getMealPlan } from "../libs/api";
 import { getRestaurantPlan } from "../libs/api";
+import Header from "./common/Header";
 //import userprofile from '../userprofile.png';
 function Dashboard() {
 	const user = localStorage.getItem("user");
@@ -41,11 +41,11 @@ function Dashboard() {
 
 	return (
 		<React.Fragment>
+			<Header></Header>
 			<div>
 				<p style={{ height: "30px" }}></p>
 			</div>
 			<div>
-				<h2>Dashboard</h2>
 
 				<SearchBar />
 
@@ -65,7 +65,7 @@ function Dashboard() {
 		 {/*} </div>
         
 				{/* Cart Section */}
-				<div className="cart-section">{/* Content for the cart section */}</div>
+				{/* <div className="cart-section">Content for the cart section</div> */}
 
 				{/* Recommended Restaurants */}
 				<h3>Recommended Restaurants</h3>

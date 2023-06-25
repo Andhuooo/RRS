@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
 import { login } from "../libs/api";
+import Header from "./common/Header";
+import logo from '../logo.png'
 
 function Login() {
 	const [username, setUsername] = useState("");
@@ -21,6 +23,7 @@ function Login() {
 		e.preventDefault();
 		const response = await login({ email: username, password });
 		if (response && response.status === 200) {
+			console.log(response,"response")
 			localStorage.setItem("user", response.data.email);
 			navigate("/dashboard");
 		} else {
@@ -30,7 +33,12 @@ function Login() {
 		// Check if the entered username and password match the default values
 	};
 	return (
+		<><Header></Header>
 		<div className="login-container">
+			<div className="login-wrapper">
+				<div className="Loginimgwrapper">
+				<img src={logo} className="logo" alt="Logo" />
+				</div>
 			<h2>Login</h2>
 			<form onSubmit={handleLogin}>
 				<div className="field-container">
@@ -60,7 +68,9 @@ function Login() {
 
 				<a href="/signup">Signup</a>
 			</div>
-		</div>
+			</div>
+		</div></>
+		
 	);
 }
 

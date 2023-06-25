@@ -23,7 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.nav {
+ padding: 10px;
+float: right;
+background: #333;
 
+}
 .App-link {
   color: #61dafb;
 }

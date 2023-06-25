@@ -4,8 +4,8 @@
 	width: 300px;
 	height: 300px;
 	margin: 0 auto;
-	margin-top: 100px;
 	padding: 20px;
+	margin: 40px auto;
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	background-color: #f8f8f8;
@@ -59,4 +59,9 @@ button[type="submit"]:hover {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+}
+.Loginimgwrapper {
+	align-items: center;
+    display: flex;
+    justify-content: center;
 }

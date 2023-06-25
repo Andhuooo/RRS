@@ -60,7 +60,7 @@ function Appbar() {
 					<Link to="/signup">Sign Up</Link>
 				</li>
 				<li>
-					<Link to="/login" onClick={() => handleLogout()}>
+					<Link to="/" onClick={() => handleLogout()}>
 						Log Out
 					</Link>
 				</li>

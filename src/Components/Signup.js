@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import { useNavigate } from "react-router-dom";
+import Header from "./common/Header";
 
 function Signup() {
 	// const [username, setUsername] = useState("");
@@ -61,6 +62,7 @@ function Signup() {
 	
 
 	return (
+		<><Header></Header>
 		<div className="signup-container">
 			<h2>Sign Up</h2>
 			<form onSubmit={handleSubmit} className="form-container">
@@ -105,7 +107,7 @@ function Signup() {
 						required
 					>
 						<option value="">Dietary Preference</option>
-						<option value="vegeterian">Vegeterian</option>
+						<option value="vegetarian">Vegetarian</option>
 						<option value="non_vegetarian">Non Vegetarian</option>
 						<option value="sugarfree">Sugarfree</option>
 						<option value="vegan">Vegan</option>
@@ -153,7 +155,8 @@ function Signup() {
 
 				<a href="/login">Login</a>
 			</div>
-		</div>
+		</div></>
+		
 	);
 }
 
